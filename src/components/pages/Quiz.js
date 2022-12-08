@@ -85,8 +85,6 @@ export default function Quiz() {
     });
   }
 
-  console.log(qna);
-
   return (
     <>
       {loading && <div>Loading...</div>}
