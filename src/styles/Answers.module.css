@@ -48,6 +48,11 @@
   font-weight: 600;
 }
 
+.caution {
+  background: var(--cautionYellow) !important;
+  font-weight: 600;
+}
+
 .wrong {
   background: var(--dangerRed) !important;
   font-weight: 600;
