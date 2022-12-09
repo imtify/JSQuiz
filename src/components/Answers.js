@@ -20,10 +20,12 @@ export default function Answers({ options = [], handleChange, input }) {
             <Checkbox
               key={index}
               className={`${classes.answer} ${
-                option.correct
+                option.correct && option.checked
                   ? classes.correct
                   : option.checked
                   ? classes.wrong
+                  : !option.checked && option.correct
+                  ? classes.caution
                   : null
               } `}
               text={option.title}
