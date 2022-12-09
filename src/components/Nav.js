@@ -9,7 +9,7 @@ export default function Nav() {
         <li>
           <Link to="/" className={classes.brand}>
             <img src={logo} alt="iQuiz" />
-            <h3>Learn with Imtiaz</h3>
+            <h3>iQuiz</h3>
           </Link>
         </li>
       </ul>
