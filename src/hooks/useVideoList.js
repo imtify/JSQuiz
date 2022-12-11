@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 
 export default function useVideoList(page) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [hasMore, setHasMore] = useState(true);
@@ -24,7 +24,7 @@ export default function useVideoList(page) {
         videosRef,
         orderByKey(),
         startAt("" + page),
-        limitToFirst(8)
+        limitToFirst(15)
       );
 
       try {
