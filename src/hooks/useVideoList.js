@@ -17,7 +17,7 @@ export default function useVideoList(page) {
 
   useEffect(() => {
     async function fetchVideos() {
-      //Database Connection
+      // database related works
       const db = getDatabase();
       const videosRef = ref(db, "videos");
       const videoQuery = query(
@@ -26,11 +26,12 @@ export default function useVideoList(page) {
         startAt("" + page),
         limitToFirst(8)
       );
+
       try {
         setError(false);
         setLoading(true);
+        // request firebase database
         const snapshot = await get(videoQuery);
-        //console.log(snapshot);
         setLoading(false);
         if (snapshot.exists()) {
           setVideos((prevVideos) => {
@@ -40,10 +41,12 @@ export default function useVideoList(page) {
           setHasMore(false);
         }
       } catch (err) {
+        console.log(err);
         setLoading(false);
         setError(true);
       }
     }
+
     fetchVideos();
   }, [page]);
 
